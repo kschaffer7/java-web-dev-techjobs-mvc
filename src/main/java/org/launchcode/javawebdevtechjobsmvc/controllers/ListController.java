@@ -27,7 +27,7 @@ public class ListController {
         columnChoices.put("location", "Location");
         columnChoices.put("positionType", "Position Type");
         columnChoices.put("coreCompetency", "Skill");
-
+        tableChoices.put("all", "All Jobs"); // KS added for todo #2
         tableChoices.put("employer", JobData.getAllEmployers());
         tableChoices.put("location", JobData.getAllLocations());
         tableChoices.put("positionType", JobData.getAllPositionTypes());
