@@ -19,9 +19,9 @@
             </tr>
             <tr>
                 <!-- TODO #2: Complete the View Jobs By Category Table. -->
-
-<!--                //<td></td> &lt;!&ndash; Feel free to remove or modify this element if necessary. &ndash;&gt;-->
-
+<!--                added to list controller to complete the view jobs by category table.-->
+<!--                Commented out td below for proper alignment-->
+<!--                <td></td> &lt;!&ndash; Feel free to remove or modify this element if necessary. &ndash;&gt;-->
                 <td th:each="category : ${tableChoices}">
                     <ul>
                         <li th:each="item : ${category.value}">
@@ -31,6 +31,5 @@
                 </td>
             </tr>
         </table>
-
     </body>
 </html>
