@@ -28,20 +28,24 @@
     </div>
 
 <!--Loop used to display job results in in TODO #1 and TODO #4-->
-    <table th:fragment = "jobsTable" class="job-listing">
-        <th:block th:each="job: ${jobs}">
-            <tr>
-                <td>
-                    <p th:text = "${'ID: ' + job.id}"></p>
-                    <p th:text = "${'Name: ' + job.name}"></p>
-                    <p th:text = "${'Employer: ' + job.employer}"></p>
-                    <p th:text = "${'Location: ' + job.location}"></p>
-                    <p th:text = "${'Position Type: ' + job.positionType}"></p>
-                    <p th:text = "${'Skill: ' + job.coreCompetency}"></p>
-                </td>
-            </tr>
-        </th:block>
-    </table>
+    <div th:fragment = "jobsTable">
+        <table  th:if = "${jobs.size() > 0}" class="job-listing">
+            <th:block th:each="job: ${jobs}">
+                <tr>
+                    <td>
+                        <p th:text = "${'ID: ' + job.id}"></p>
+                        <p th:text = "${'Name: ' + job.name}"></p>
+                        <p th:text = "${'Employer: ' + job.employer}"></p>
+                        <p th:text = "${'Location: ' + job.location}"></p>
+                        <p th:text = "${'Position Type: ' + job.positionType}"></p>
+                        <p th:text = "${'Skill: ' + job.coreCompetency}"></p>
+                    </td>
+                </tr>
+            </th:block>
+        </table>
+        <th:block th:if = "${jobs.size() == 0}"><p>No results found.</p></th:block>
+    </div>
+
 
 </body>
 </html>

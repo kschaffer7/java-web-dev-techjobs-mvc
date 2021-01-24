@@ -19,7 +19,9 @@ public class SearchController {
 
     @RequestMapping(value = "")
     public String search(Model model) {
+        ArrayList<Job> jobs = new ArrayList<Job>();
         model.addAttribute("columns", columnChoices);
+        model.addAttribute("jobs", jobs);
         return "search";
     }
 
@@ -38,7 +40,8 @@ public class SearchController {
         if (searchTerm.toLowerCase().equals("all") || searchTerm.toLowerCase().equals("")){
             jobs = JobData.findAll();
             // Otherwise, send the search information to findByColumnAndValue.
-        } else {
+        }
+        else {
             jobs = JobData.findByColumnAndValue(searchType, searchTerm);
         }
         // Pass ListController.columnChoices into the view, as the existing search handler does.
