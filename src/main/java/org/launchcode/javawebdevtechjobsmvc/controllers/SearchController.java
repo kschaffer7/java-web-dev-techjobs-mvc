@@ -24,7 +24,6 @@ public class SearchController {
     }
 
     // TODO #3 - Create a handler to process a search request and render the updated search view.
-
     // Use the correct annotation for the method. To configure the correct mapping type and mapping route, refer to the form tag in the search.html template.
     @PostMapping("results")
     // Add a displaySearchResults handler method to SearchController
